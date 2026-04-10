@@ -17,6 +17,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  // Hero is dark — use light text until scrolled past it
+  const onDark = !scrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +61,13 @@ export default function Navbar() {
             className="flex flex-col leading-none text-left"
           >
             <span
-              className="text-[#1A4731] font-semibold tracking-wide"
+              className={`font-semibold tracking-wide transition-colors duration-300 ${onDark ? "text-white" : "text-[#1A4731]"}`}
               style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.15rem" }}
             >
               PRIN 2022
             </span>
             <span
-              className="text-[#C17D11] text-xs tracking-widest uppercase"
+              className={`text-xs tracking-widest uppercase transition-colors duration-300 ${onDark ? "text-[#f0a830]" : "text-[#C17D11]"}`}
               style={{ fontFamily: "'Outfit', sans-serif", letterSpacing: "0.12em" }}
             >
               LIF · LIFR · PDAC
@@ -82,9 +84,13 @@ export default function Navbar() {
                   key={link.href}
                   onClick={() => handleNav(link.href)}
                   className={`relative text-sm transition-colors duration-200 pb-0.5 ${
-                    isActive
-                      ? "text-[#1A4731] font-medium"
-                      : "text-[#374151] hover:text-[#1A4731]"
+                    onDark
+                      ? isActive
+                        ? "text-white font-medium"
+                        : "text-white/75 hover:text-white"
+                      : isActive
+                        ? "text-[#1A4731] font-medium"
+                        : "text-[#374151] hover:text-[#1A4731]"
                   }`}
                   style={{ fontFamily: "'Outfit', sans-serif" }}
                 >
@@ -99,7 +105,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-[#1A4731] p-1"
+            className={`md:hidden p-1 transition-colors duration-300 ${onDark ? "text-white" : "text-[#1A4731]"}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >

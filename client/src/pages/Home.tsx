@@ -291,9 +291,9 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0a1f2e" }}>
-        {/* Dark teal gradient background */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #071520 0%, #0d2a3a 40%, #0a2535 70%, #061218 100%)" }} />
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#1a3d4f" }}>
+        {/* Medium teal gradient background — lighter than before */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #1a3d4f 0%, #1f4e65 35%, #1a4a5e 65%, #163545 100%)" }} />
         {/* Subtle noise texture overlay */}
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 256 256\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noise\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"4\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noise)\"%3E%3C/rect%3E%3C/svg%3E')", backgroundRepeat: "repeat", backgroundSize: "128px" }} />
 
@@ -305,7 +305,7 @@ export default function Home() {
             className="w-full h-full object-cover object-left"
           />
           {/* Gradient fade on left edge to blend with text area */}
-          <div className="absolute inset-y-0 left-0 w-2/5" style={{ background: "linear-gradient(to right, #071520 0%, transparent 100%)" }} />
+          <div className="absolute inset-y-0 left-0 w-2/5" style={{ background: "linear-gradient(to right, #1a3d4f 0%, transparent 100%)" }} />
         </div>
 
         <div className="relative container mx-auto px-6 lg:px-10 max-w-7xl pt-28 pb-20">
