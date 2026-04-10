@@ -291,16 +291,20 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/hero-pancreas-research-Mn2Swunu4QyPoYgu8rLKex.webp)`,
-          }}
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FDFAF5]/95 via-[#FDFAF5]/80 to-[#FDFAF5]/30" />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FDFAF5]">
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FDFAF5] via-[#F5F0E8] to-[#EDE8DC]" />
+        {/* Protein structure image — right side */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 flex items-center justify-center pointer-events-none">
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/lif-lifr-structure_175a8c93.png"
+            alt="LIF/LIFR protein structure"
+            className="h-[85vh] max-h-[700px] w-auto object-contain drop-shadow-2xl opacity-90"
+            style={{ filter: "drop-shadow(0 20px 60px rgba(26,71,49,0.15))" }}
+          />
+        </div>
+        {/* Soft fade on the right edge of the image */}
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-[#FDFAF5]/60 to-transparent pointer-events-none" />
 
         <div className="relative container mx-auto px-6 lg:px-10 max-w-7xl pt-28 pb-20">
           <div className="max-w-2xl">
