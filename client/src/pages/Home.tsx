@@ -291,51 +291,53 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#FDFAF5]">
-        {/* Subtle background texture */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FDFAF5] via-[#F5F0E8] to-[#EDE8DC]" />
-        {/* Protein surface image — right side, vertical */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 flex items-center justify-center pointer-events-none">
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0a1f2e" }}>
+        {/* Dark teal gradient background */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #071520 0%, #0d2a3a 40%, #0a2535 70%, #061218 100%)" }} />
+        {/* Subtle noise texture overlay */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 256 256\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noise\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"4\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noise)\"%3E%3C/rect%3E%3C/svg%3E')", backgroundRepeat: "repeat", backgroundSize: "128px" }} />
+
+        {/* Composed protein image — right side, full bleed */}
+        <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none">
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/lifr-surface-vertical_b988ebb2.png"
-            alt="hLIFr surface with binding site L2/L3"
-            className="h-[88vh] max-h-[720px] w-auto object-contain opacity-90"
-            style={{ filter: "drop-shadow(0 16px 48px rgba(26,71,49,0.15))" }}
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/hero-lifr-pdac-composition_30f402c4.png"
+            alt="hLIFr molecular surface in tumor microenvironment"
+            className="w-full h-full object-cover object-left"
           />
+          {/* Gradient fade on left edge to blend with text area */}
+          <div className="absolute inset-y-0 left-0 w-2/5" style={{ background: "linear-gradient(to right, #071520 0%, transparent 100%)" }} />
         </div>
-        {/* Soft fade on the right edge */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-[#FDFAF5]/55 to-transparent pointer-events-none" />
 
         <div className="relative container mx-auto px-6 lg:px-10 max-w-7xl pt-28 pb-20">
           <div className="max-w-2xl">
             {/* PRIN badge */}
             <div
-              className="inline-flex items-center gap-2 bg-[#1A4731]/10 border border-[#1A4731]/20 rounded-full px-4 py-1.5 mb-8"
-              style={{ fontFamily: "'Outfit', sans-serif" }}
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8"
+              style={{ fontFamily: "'Outfit', sans-serif", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)" }}
             >
-              <span className="w-2 h-2 rounded-full bg-[#C17D11] animate-pulse" />
-              <span className="text-xs font-medium text-[#1A4731] uppercase tracking-widest">
+              <span className="w-2 h-2 rounded-full bg-[#f0a830] animate-pulse" />
+              <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "#e8d5a3" }}>
                 PRIN 2022 – MUR Funded Research
               </span>
             </div>
 
             <h1
-              className="text-5xl lg:text-6xl xl:text-7xl font-semibold text-[#1A4731] leading-[1.08] mb-6"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.08] mb-6"
+              style={{ fontFamily: "'Cormorant Garamond', serif", color: "#f0ece4" }}
             >
               Targeting Leukaemia
               <br />
-              <em className="font-light text-[#C17D11]">Inhibitory Factor</em>
+              <em className="font-light" style={{ color: "#f0a830" }}>Inhibitory Factor</em>
               <br />
               and Bile Acid Receptors
             </h1>
 
             <p
-              className="text-lg text-[#374151] leading-relaxed mb-10 max-w-xl"
-              style={{ fontFamily: "'Lora', serif" }}
+              className="text-lg leading-relaxed mb-10 max-w-xl"
+              style={{ fontFamily: "'Lora', serif", color: "rgba(240,236,228,0.75)" }}
             >
               Synthetic small molecules as a new armamentarium in the treatment of
-              <strong className="text-[#1A4731]"> pancreatic ductal adenocarcinoma</strong>.
+              <strong style={{ color: "#a8d8b0" }}> pancreatic ductal adenocarcinoma</strong>.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -343,8 +345,10 @@ export default function Home() {
                 onClick={() => {
                   document.getElementById("background")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="bg-[#1A4731] text-[#FDFAF5] px-7 py-3 text-sm font-medium rounded transition-all hover:bg-[#15382a] hover:shadow-lg"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
+                className="px-7 py-3 text-sm font-medium rounded transition-all"
+                style={{ fontFamily: "'Outfit', sans-serif", background: "#2a7a4f", color: "#f0ece4" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "#236641")}
+                onMouseLeave={e => (e.currentTarget.style.background = "#2a7a4f")}
               >
                 Explore the Project
               </button>
@@ -352,15 +356,17 @@ export default function Home() {
                 onClick={() => {
                   document.getElementById("results")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="border border-[#1A4731] text-[#1A4731] px-7 py-3 text-sm font-medium rounded transition-all hover:bg-[#1A4731]/5"
-                style={{ fontFamily: "'Outfit', sans-serif" }}
+                className="px-7 py-3 text-sm font-medium rounded transition-all"
+                style={{ fontFamily: "'Outfit', sans-serif", border: "1px solid rgba(240,236,228,0.35)", color: "#f0ece4", background: "transparent" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.07)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 View Publications
               </button>
             </div>
 
             {/* Stats bar */}
-            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-[#1A4731]/15">
+            <div className="flex flex-wrap gap-8 mt-14 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
               {[
                 { value: "3", label: "Universities" },
                 { value: "8", label: "Publications" },
@@ -369,14 +375,14 @@ export default function Home() {
               ].map((stat) => (
                 <div key={stat.label}>
                   <div
-                    className="text-3xl font-bold text-[#1A4731]"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    className="text-3xl font-bold"
+                    style={{ fontFamily: "'Cormorant Garamond', serif", color: "#a8d8b0" }}
                   >
                     {stat.value}
                   </div>
                   <div
-                    className="text-xs text-[#6b7280] uppercase tracking-wider mt-0.5"
-                    style={{ fontFamily: "'Outfit', sans-serif" }}
+                    className="text-xs uppercase tracking-wider mt-0.5"
+                    style={{ fontFamily: "'Outfit', sans-serif", color: "rgba(240,236,228,0.5)" }}
                   >
                     {stat.label}
                   </div>
