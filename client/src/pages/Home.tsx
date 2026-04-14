@@ -799,26 +799,34 @@ export default function Home() {
                   Congress Gallery
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-                  <ImgPlaceholder
-                    label="Congress photo"
-                    height="160px"
-                    icon="camera"
-                  />
-                  <ImgPlaceholder
-                    label="Congress photo"
-                    height="160px"
-                    icon="camera"
-                  />
-                  <ImgPlaceholder
-                    label="Congress photo"
-                    height="160px"
-                    icon="camera"
-                  />
-                  <ImgPlaceholder
-                    label="Congress photo"
-                    height="160px"
-                    icon="camera"
-                  />
+                  <div className="overflow-hidden rounded" style={{ height: '160px' }}>
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/congress-dinner_e994f424.jpeg"
+                      alt="Congress social dinner"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded" style={{ height: '160px' }}>
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/congress-presentation-lif_d2c2fbaf.jpeg"
+                      alt="Oral presentation – Mifepristone on LIF-LIFR pathway"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded" style={{ height: '160px' }}>
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/congress-presentation-lifr_31e6825b.jpeg"
+                      alt="Oral presentation – Drug repositioning for LIFR antagonist"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded" style={{ height: '160px' }}>
+                    <img
+                      src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031210343/aSR4eCDFQwQmknW2pPEsnU/congress-poster_585b73cf.jpeg"
+                      alt="Poster presentation – Bile acids in drug discovery, ICS 2024"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                 </div>
               </div>
 
